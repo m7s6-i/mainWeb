@@ -1,0 +1,55 @@
+/* 
+ * Currency Fix - Ensures all prices display with $ symbol
+ * This takes precedence over any other styles
+ */
+
+/* Reset any currency display in prices */
+.price,
+.flavor-price,
+.item-price,
+p[class*="price"],
+span[class*="price"],
+div[class*="price"] {
+    position: relative;
+}
+
+/* Remove any content before the price */
+.price::before,
+.flavor-price::before,
+.item-price::before,
+p[class*="price"]::before,
+span[class*="price"]::before,
+div[class*="price"]::before {
+    content: "" !important;
+}
+
+/* Override inline styles that might set the currency */
+.price,
+.flavor-price,
+.item-price,
+p[class*="price"],
+span[class*="price"],
+div[class*="price"] {
+    font-family: inherit !important;
+}
+
+/* Target the specific element with £4.99 shown in the screenshot */
+[class*="price"] {
+    font-family: inherit !important;
+}
+
+/* Custom fixing for specific price elements */
+#menu-container .price,
+.menu-card .price,
+#menu .price,
+.menu-grid .price {
+    position: relative;
+}
+
+/* Ensure $ symbol is used */
+#menu-container .price::before,
+.menu-card .price::before,
+#menu .price::before,
+.menu-grid .price::before {
+    content: "" !important;
+}

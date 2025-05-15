@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duh-Lish-Us Treatery | Premium Handmade Ice Cream</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+    <link rel="stylesheet" href="css/menu-styles.css?v=1.1">
+    <link rel="stylesheet" href="css/truck-styles.css?v=1.1">
+    <link rel="stylesheet" href="css/truck-schedule.css?v=1.1">
+    <!-- Removed reference to non-existent button-fix.css -->
+    <link rel="stylesheet" href="css/currency-fix.css?v=1.1">
+    <link rel="stylesheet" href="css/menu-badge-styles.css?v=1.1">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .hero-buttons .btn-primary,
+        .hero-buttons .btn-outline,
+        .contact-form .btn-primary {
+            background-color: #FF85A2 !important;
+            color: white !important;
+            border: 2px solid #FF85A2 !important;
+            font-weight: 600;
+        }
+        .hero-buttons .btn-primary:hover,
+        .hero-buttons .btn-outline:hover,
+        .contact-form .btn-primary:hover {
+            background-color: white !important;
+            color: #FF85A2 !important;
+            border-color: #FF85A2 !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#home" class="logo">
+                <h1>Duh-Lish-Us<span>Treatery</span></h1>
+            </a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Mobile menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#truck-locator" class="nav-link">Find Our Truck</a></li>
+                    <li><a href="#events" class="nav-link">Book an Event</a></li>
+
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="admin-link">
+                <a href="admin/login.php" title="Admin Login">
+                    <i class="fas fa-user-shield"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Handcrafted <span>Ice Cream</span> Made with <span>Love</span></h2>
+                    <p class="hero-text">Indulge in our premium, artisanal ice cream made with the finest ingredients and traditional methods.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">View Menu</a>
+                        <a href="#contact" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Delicious ice cream cone">
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our <span>Menu</span></h2>
+                    <p class="section-subtitle">Discover our handcrafted selection of premium ice creams</p>
+                </div>
+                
+                <div id="menu-container" class="menu-container">
+                    <!-- Sample Menu Items (For Demo) -->
+                    <div class="category-section">
+                        <h3>Classic Flavors</h3>
+                        <div class="menu-grid">
+                            <div class="menu-card">
+                                <div class="menu-img">
+                                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Chocolate Fudge">
+                                    <div class="status-label status-available">AVAILABLE</div>
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Chocolate Fudge</h4>
+                                    <p class="description">Rich chocolate ice cream with delicious fudge swirls throughout. Made with premium Belgian chocolate.</p>
+                                    <div class="featured-badge"><i class="fas fa-star"></i> Featured</div>
+                                    <p class="price">$4.99</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-img">
+                                    <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371" alt="Vanilla Bean">
+                                    <div class="status-label status-sold-out">SOLD OUT</div>
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Vanilla Bean</h4>
+                                    <div class="menu-category">Classic</div>
+                                    <p class="description">Classic vanilla ice cream with real vanilla bean specks. Simple yet extraordinarily delicious.</p>
+                                    <p class="price">$4.99</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-img">
+                                    <img src="https://images.unsplash.com/photo-1633933358116-a27b902fad35" alt="Strawberry Fields">
+                                    <div class="status-label status-not-in-truck">NOT IN TRUCK</div>
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Strawberry Fields</h4>
+                                    <div class="menu-category">Fruit</div>
+                                    <p class="description">Fresh strawberry ice cream with real fruit pieces. Perfect for a summer day!</p>
+                                    <p class="price">$4.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Original Loading Spinner (hidden for demo) -->
+                    <div class="loading-spinner" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading menu items...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Find Our Truck Section -->
+        <section id="truck-locator" class="truck-locator">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-truck"></i> Find Our <span>Truck</span></h2>
+                    <p class="section-subtitle">Track our location and see when we'll be in your neighborhood</p>
+                </div>
+                
+                <div class="truck-locator-grid">
+                    <div class="truck-map">
+                        <div class="map-container">
+                            <div id="truck-map" class="map-canvas"></div>
+                        </div>
+                        <div class="current-location-info">
+                            <div class="location-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3>Currently Serving At</h3>
+                                <p id="current-truck-location">Checking location...</p>
+                                <p id="current-truck-address">Loading address...</p>
+                                <p>Will be here until: <span id="location-time">Loading...</span></p>
+                                <p class="status-text" id="truck-status">Status: <span class="status-value">Loading...</span></p>
+                                <a href="#" id="get-directions-btn" class="special-btn btn btn-primary" target="_blank">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="truck-schedule">
+                        <h3><i class="fas fa-calendar-alt"></i> Weekly Schedule</h3>
+                        <div class="schedule-tabs" id="weekly-schedule-tabs">
+                            <div class="tab-headers" id="day-tabs">
+                                <!-- Day tabs will be added here dynamically -->
+                            </div>
+                            
+                            <div class="tab-content" id="day-content">
+                                <!-- Day content will be added here dynamically -->
+                                <div class="no-schedule-notice">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Check back soon for our updated schedule!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="request-visit">
+                            <div class="visit-icon">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <h3>Want us in your neighborhood?</h3>
+                            <p>Fill out the form to request a visit from our ice cream truck!</p>
+                            <button class="btn btn-primary special-btn request-visit-btn" data-modal="request-visit-modal">
+                                <i class="fas fa-envelope"></i> Request a Visit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+                <!-- Weather information removed as requested -->
+            </div>
+        </section>
+
+        <!-- Event Booking Section -->
+        <section id="events" class="events">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Book Our <span>Truck</span></h2>
+                    <p class="section-subtitle">Make your event special with our ice cream truck</p>
+                </div>
+                
+                <div class="events-grid">
+                    <div class="events-info">
+                        <div class="events-image">
+                            <img src="https://images.unsplash.com/photo-1565065935580-94261032cce7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Ice cream truck at an event">
+                        </div>
+                        <div class="event-info">
+                            <h3>Book Our Ice Cream Truck</h3>
+                            <p>Make your next event extra special with our ice cream truck! Our friendly staff will serve delicious treats to your guests, creating sweet memories that will last.</p>
+                            <p>Perfect for:</p>
+                            <ul class="event-types">
+                                <li><i class="fas fa-birthday-cake"></i> Birthday Parties</li>
+                                <li><i class="fas fa-briefcase"></i> Corporate Events</li>
+                                <li><i class="fas fa-heart"></i> Weddings</li>
+                                <li><i class="fas fa-graduation-cap"></i> Graduations</li>
+                                <li><i class="fas fa-users"></i> Community Events</li>
+                            </ul>
+                            <p>Contact us for pricing and availability. We'll work with you to create the perfect ice cream experience for your event.</p>
+                        </div>
+                    </div>
+                    <div class="booking-form-container">
+                        <form id="eventBookingForm" class="booking-form">
+                            <h3>Request a Booking</h3>
+                            <div class="form-group">
+                                <label for="event-name">Event Name</label>
+                                <input type="text" id="event-name" name="event-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date" name="event-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-time">Event Time</label>
+                                <input type="time" id="event-time" name="event-time" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-duration">Duration (hours)</label>
+                                <select id="event-duration" name="event-duration" required>
+                                    <option value="2">2 hours</option>
+                                    <option value="3">3 hours</option>
+                                    <option value="4">4 hours</option>
+                                    <option value="5">5+ hours</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-guests">Number of Guests</label>
+                                <input type="number" id="event-guests" name="event-guests" min="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-location">Event Location</label>
+                                <input type="text" id="event-location" name="event-location" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-package">Select Package</label>
+                                <select id="event-package" name="event-package" required>
+                                    <option value="birthday">Birthday Bash ($349)</option>
+                                    <option value="corporate">Corporate Event ($599)</option>
+                                    <option value="wedding">Wedding Sweet ($799)</option>
+                                    <option value="custom">Custom Package (We'll contact you)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-message">Special Requests</label>
+                                <textarea id="event-message" name="event-message" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary special-btn">Submit Booking Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1556710807-a43bf31e3704?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Our ice cream shop">
+                    </div>
+                    <div class="about-content">
+                        <h2 class="section-title">Our <span>Story</span></h2>
+                        <p>write anything here</p>
+                        
+                        <div class="hours-container">
+                            <h3><i class="fas fa-map-marker-alt"></i> Find Our Truck</h3>
+                            <p>Our ice cream truck travels throughout ontario. Check our location below or use the truck locator to find us near you!</p>
+                            <div class="truck-location-link">
+                                <a href="#truck-locator" class="truck-link"><i class="fas fa-truck"></i> View Current Location</a>
+                            </div>
+                        </div>
+                        
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <h3>Natural Ingredients</h3>
+                                <p>We use only natural ingredients with no artificial colors or flavors.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart"></i>
+                                <h3>Made with Love</h3>
+                                <p>Each batch is carefully crafted with passion and dedication.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get in <span>Touch</span></h2>
+                    <p class="section-subtitle">We'd love to hear from you</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Call Us</h3>
+                            <p>your number</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email Us</h3>
+                            <p>info@londonicecream.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Duh-Lish-Us<span>Treatery</span></h2>
+                    <p>write logo here</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Duh-Lish-Us Treatery. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/currency-fixer.js"></script>
+    <script src="js/menu-loader.js"></script>
+    <script src="js/truck-features.js"></script>
+    <script src="js/truck-schedule.js"></script>
+    
+    <!-- Google Maps API - Replace YOUR_API_KEY with your actual API key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initTruckMap"></script>
+</body>
+</html>

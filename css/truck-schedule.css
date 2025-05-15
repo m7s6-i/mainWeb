@@ -1,0 +1,182 @@
+/* Truck Schedule Styles */
+.truck-locator-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .truck-locator-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.truck-map {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.current-location-info {
+    margin-top: 2rem;
+}
+
+.location-card {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary);
+}
+
+.location-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.location-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.location-card p {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.location-card .btn {
+    margin-top: 1.5rem;
+}
+
+.truck-schedule {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.truck-schedule h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--dark);
+    border-bottom: 2px solid var(--light);
+    padding-bottom: 1rem;
+}
+
+.truck-schedule h3 i {
+    color: var(--primary);
+    margin-right: 1rem;
+}
+
+/* Tab styles */
+.tab-headers {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--light);
+    margin-bottom: 2rem;
+}
+
+.day-tab {
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.day-tab:hover {
+    color: var(--primary);
+}
+
+.day-tab.active {
+    color: var(--primary);
+}
+
+.day-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.day-panel {
+    display: none;
+}
+
+.day-panel.active {
+    display: block;
+}
+
+.location-list {
+    list-style: none;
+}
+
+.location-list li {
+    border-bottom: 1px solid var(--light);
+    padding: 1.2rem 0;
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+.location-list li:last-child {
+    border-bottom: none;
+}
+
+.location-list li .time {
+    font-weight: 600;
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.location-list li small {
+    display: block;
+    color: var(--medium);
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+    margin-left: 1.5rem;
+}
+
+.no-locations {
+    text-align: center;
+    padding: 2rem;
+    color: var(--medium);
+    font-style: italic;
+}
+
+.request-visit {
+    margin-top: 2.5rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light);
+    border-radius: var(--border-radius);
+}
+
+.request-visit h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border: none;
+}
+
+.request-visit p {
+    margin-bottom: 1.5rem;
+    color: var(--medium);
+}
+
+.no-data {
+    text-align: center;
+    padding: 2rem;
+    color: var(--medium);
+    font-style: italic;
+}

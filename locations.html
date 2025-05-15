@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="" id="csrf-token">
+    <title>Truck Locations | Duh-Lish-Us Treatery</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        .locations-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        .truck-schedule {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .schedule-table th,
+        .schedule-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .schedule-table th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+        }
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+        .location-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        .location-icon {
+            background-color: #ff85a2;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        .location-details {
+            flex-grow: 1;
+        }
+        .location-actions {
+            margin-left: 1rem;
+        }
+        .current-location {
+            border-left: 4px solid #ff85a2;
+        }
+        .location-status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        .status-active {
+            background-color: #e1f7e1;
+            color: #2a9d2a;
+        }
+        .status-upcoming {
+            background-color: #e1ecff;
+            color: #2a7abf;
+        }
+        .subscribe-box {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .subscribe-box h3 {
+            margin-bottom: 1rem;
+        }
+        .location-sms-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .location-sms-form input {
+            flex-grow: 1;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <h1>London<span>Ice Cream</span></h1>
+            </a>
+            
+            <nav class="nav">
+                <button class="nav-toggle">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#flavors" class="nav-link">Flavors</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#events" class="nav-link">Events</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Find Our Truck</h1>
+                <p>Track our ice cream truck as it travels around London</p>
+            </div>
+        </section>
+
+        <section class="locations-section">
+            <div class="container">
+                <div class="locations-content">
+                    <div class="map-container" id="map">
+                        <!-- Google Maps will be loaded here -->
+                    </div>
+                    
+                    <div class="current-locations">
+                        <h2 class="section-title">Current <span>Locations</span></h2>
+                        <p>Here's where our ice cream truck is today and where we'll be tomorrow.</p>
+                        
+                        <div class="location-card current-location">
+                            <div class="location-icon">
+                                <i class="fas fa-ice-cream"></i>
+                            </div>
+                            <div class="location-details">
+                                <h3>Hyde Park <span class="location-status status-active">Now Serving</span></h3>
+                                <p>Corner of Serpentine Road and West Carriage Drive</p>
+                                <p><strong>Today</strong> until 7:00 PM</p>
+                            </div>
+                            <div class="location-actions">
+                                <a href="https://maps.google.com/?q=Hyde+Park+London+UK" target="_blank" class="btn btn-primary">Get Directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="location-card">
+                            <div class="location-icon">
+                                <i class="fas fa-ice-cream"></i>
+                            </div>
+                            <div class="location-details">
+                                <h3>Camden Market <span class="location-status status-upcoming">Coming Soon</span></h3>
+                                <p>Near the Lock Bridge entrance</p>
+                                <p><strong>Today</strong> 7:30 PM - 10:00 PM</p>
+                            </div>
+                            <div class="location-actions">
+                                <a href="https://maps.google.com/?q=Camden+Market+London+UK" target="_blank" class="btn btn-outline">Get Directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="location-card">
+                            <div class="location-icon">
+                                <i class="fas fa-ice-cream"></i>
+                            </div>
+                            <div class="location-details">
+                                <h3>Covent Garden</h3>
+                                <p>Next to the Apple Market</p>
+                                <p><strong>Tomorrow</strong> 11:00 AM - 3:00 PM</p>
+                            </div>
+                            <div class="location-actions">
+                                <a href="https://maps.google.com/?q=Covent+Garden+London+UK" target="_blank" class="btn btn-outline">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="truck-schedule">
+                        <h2 class="section-title">Weekly <span>Schedule</span></h2>
+                        <p>Plan ahead! Here's where our truck will be this week.</p>
+                        
+                        <table class="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Morning Location</th>
+                                    <th>Afternoon Location</th>
+                                    <th>Evening Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monday</strong></td>
+                                    <td>London Bridge (8am-11am)</td>
+                                    <td>Tower of London (12pm-4pm)</td>
+                                    <td>Shoreditch (5pm-9pm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tuesday</strong></td>
+                                    <td>St. James Park (9am-12pm)</td>
+                                    <td>Leicester Square (1pm-5pm)</td>
+                                    <td>Soho (6pm-10pm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wednesday</strong></td>
+                                    <td>Notting Hill (9am-12pm)</td>
+                                    <td>Holland Park (1pm-4pm)</td>
+                                    <td>South Bank (5pm-9pm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Thursday</strong></td>
+                                    <td>Regent's Park (9am-12pm)</td>
+                                    <td>Camden Market (1pm-5pm)</td>
+                                    <td>Primrose Hill (6pm-9pm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Friday</strong></td>
+                                    <td>Hyde Park (8am-11am)</td>
+                                    <td>Covent Garden (12pm-5pm)</td>
+                                    <td>Leicester Square (6pm-10pm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Saturday</strong></td>
+                                    <td>Borough Market (8am-12pm)</td>
+                                    <td>South Bank (1pm-5pm)</td>
+                                    <td>Camden Market (6pm-10pm)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunday</strong></td>
+                                    <td>Brick Lane (9am-12pm)</td>
+                                    <td>Victoria Park (1pm-5pm)</td>
+                                    <td>Spitalfields (6pm-8pm)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="subscribe-box">
+                        <h3>Get Location Updates</h3>
+                        <p>Want to know when we're in your area? Sign up for SMS notifications about our truck locations.</p>
+                        <form class="location-sms-form">
+                            <input type="tel" placeholder="Your phone number" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <p class="small-text">Standard message and data rates may apply. You can unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="footer-logo">
+                        <h2>London<span>Ice Cream</span></h2>
+                    </a>
+                    <p>Premium handcrafted ice cream made with the finest ingredients and traditional methods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#flavors">Flavors</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to get updates on new flavors and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Duh-Lish-Us Treatery Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Google Maps
+        function initMap() {
+            // London coordinates
+            const londonCoords = { lat: 51.507351, lng: -0.127758 };
+            
+            // Current truck location (Hyde Park)
+            const truckLocation = { lat: 51.507268, lng: -0.165730 };
+            
+            // Create map centered on London
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: londonCoords,
+                styles: [
+                    {
+                        "featureType": "administrative",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#444444"}]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [{"color": "#f2f2f2"}]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": [{"saturation": -100},{"lightness": 45}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [{"visibility": "simplified"}]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.icon",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [{"visibility": "off"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [{"color": "#c4e8ff"},{"visibility": "on"}]
+                    }
+                ]
+            });
+
+            // Current location (Hyde Park)
+            const currentMarker = new google.maps.Marker({
+                position: truckLocation,
+                map: map,
+                title: "Hyde Park - Now Serving!",
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/pink.png",
+                    scaledSize: new google.maps.Size(40, 40)
+                },
+                animation: google.maps.Animation.BOUNCE
+            });
+            
+            // Add info window for current location
+            const currentInfoWindow = new google.maps.InfoWindow({
+                content: '<div style="padding: 10px; max-width: 200px;"><h3 style="margin-top: 0; color: #ff85a2;">Now Serving!</h3><p><strong>Hyde Park</strong><br>Corner of Serpentine Road<br>Open until 7:00 PM today</p><a href="https://maps.google.com/?q=Hyde+Park+London+UK" target="_blank" style="color: #ff85a2;">Get Directions</a></div>'
+            });
+            
+            currentMarker.addListener("click", () => {
+                currentInfoWindow.open(map, currentMarker);
+            });
+            
+            // Upcoming locations
+            const upcomingLocations = [
+                {
+                    position: { lat: 51.541599, lng: -0.146597 },
+                    title: "Camden Market - Coming Soon",
+                    info: '<div style="padding: 10px; max-width: 200px;"><h3 style="margin-top: 0;">Coming Soon</h3><p><strong>Camden Market</strong><br>Near the Lock Bridge entrance<br>Today 7:30 PM - 10:00 PM</p><a href="https://maps.google.com/?q=Camden+Market+London+UK" target="_blank" style="color: #ff85a2;">Get Directions</a></div>'
+                },
+                {
+                    position: { lat: 51.511601, lng: -0.123887 },
+                    title: "Covent Garden - Tomorrow",
+                    info: '<div style="padding: 10px; max-width: 200px;"><h3 style="margin-top: 0;">Tomorrow</h3><p><strong>Covent Garden</strong><br>Next to the Apple Market<br>11:00 AM - 3:00 PM</p><a href="https://maps.google.com/?q=Covent+Garden+London+UK" target="_blank" style="color: #ff85a2;">Get Directions</a></div>'
+                }
+            ];
+            
+            // Add markers for upcoming locations
+            upcomingLocations.forEach(location => {
+                const marker = new google.maps.Marker({
+                    position: location.position,
+                    map: map,
+                    title: location.title,
+                    icon: {
+                        url: "https://maps.google.com/mapfiles/ms/icons/blue.png",
+                        scaledSize: new google.maps.Size(30, 30)
+                    }
+                });
+                
+                const infoWindow = new google.maps.InfoWindow({
+                    content: location.info
+                });
+                
+                marker.addListener("click", () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+        
+        // Load Google Maps API
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create the script element
+            const script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
+            script.defer = true;
+            script.async = true;
+            
+            // Note: In a production environment, you would replace YOUR_API_KEY with an actual Google Maps API key
+            // For demo purposes, we'll use a placeholder which will show a development map with "For development purposes only" watermark
+            
+            // Append the script to the document
+            document.head.appendChild(script);
+            
+            // SMS form handling
+            const smsForm = document.querySelector('.location-sms-form');
+            if (smsForm) {
+                smsForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const phoneInput = smsForm.querySelector('input[type="tel"]');
+                    
+                    // Simple validation
+                    if (!phoneInput.value) {
+                        alert('Please enter your phone number');
+                        return;
+                    }
+                    
+                    // Simulate submission
+                    const submitButton = smsForm.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    
+                    submitButton.textContent = 'Subscribing...';
+                    submitButton.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert('Thank you for subscribing to location updates! You\'ll receive a confirmation text message shortly.');
+                        smsForm.reset();
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

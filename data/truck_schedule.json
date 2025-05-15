@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "day": "Monday",
+        "locations": [
+            {
+                "time": "10 am ",
+                "location": "2323",
+                "address": "212131",
+                "lat": 31312,
+                "lng": 3131
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "day": "Tuesday",
+        "locations": []
+    },
+    {
+        "id": 3,
+        "day": "Wednesday",
+        "locations": []
+    },
+    {
+        "id": 4,
+        "day": "Thursday",
+        "locations": []
+    },
+    {
+        "id": 5,
+        "day": "Friday",
+        "locations": []
+    },
+    {
+        "id": 6,
+        "day": "Saturday",
+        "locations": []
+    },
+    {
+        "id": 7,
+        "day": "Sunday",
+        "locations": []
+    },
+    {
+        "id": 8,
+        "current": {
+            "day": "Monday",
+            "time": "10 am ",
+            "location": "2323",
+            "address": "212131",
+            "lat": 31312,
+            "lng": 3131,
+            "until": "undefined"
+        }
+    }
+]

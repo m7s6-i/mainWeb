@@ -1,0 +1,195 @@
+[
+    {
+        "id": 1,
+        "name": "Vanilla Bean",
+        "description": "Classic vanilla ice cream with real vanilla bean specks",
+        "price": 619,
+        "category": "Classic",
+        "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auto=format&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;fit=crop&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;w=600&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;q=80",
+        "featured": true,
+        "available": false,
+        "in_truck": true
+    },
+    {
+        "id": 2,
+        "name": "Chocolate Fudge",
+        "description": "Rich chocolate ice cream with fudge swirls",
+        "price": 1,
+        "category": "Chocolate",
+        "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&amp;amp;amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;amp;amp;auto=format&amp;amp;amp;amp;fit=crop&amp;amp;amp;amp;w=600&amp;amp;amp;amp;q=80",
+        "featured": false,
+        "available": true,
+        "in_truck": false
+    },
+    {
+        "id": 3,
+        "name": "Strawberry Fields",
+        "description": "Fresh strawberry ice cream with real fruit pieces",
+        "price": 4.99,
+        "category": "Sorbet",
+        "image": "https://images.unsplash.com/photo-1633933358116-a27b902fad35?ixlib=rb-4.0.3&amp;amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;amp;auto=format&amp;amp;amp;fit=crop&amp;amp;amp;w=600&amp;amp;amp;q=80",
+        "featured": true,
+        "available": true,
+        "in_truck": false
+    },
+    {
+        "id": 4,
+        "name": "Sherbet - Orange",
+        "description": "Refreshing orange sherbet with a perfect balance of sweetness and citrus tang",
+        "price": 4.99,
+        "category": "Sherbet",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 5,
+        "name": "Parlour269 Vanilla Bean",
+        "description": "Our signature vanilla bean ice cream crafted with premium vanilla and a silky smooth texture",
+        "price": 5.49,
+        "category": "Seasonal",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 6,
+        "name": "Sorbet - Granny's Green Apple",
+        "description": "Tart and sweet green apple sorbet, perfect for a refreshing palette cleanser",
+        "price": 4.99,
+        "category": "Sorbet",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 7,
+        "name": "NSA - Vanilla",
+        "description": "No Sugar Added vanilla ice cream, perfect for those watching their sugar intake",
+        "price": 5.49,
+        "category": "Special Diet",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 8,
+        "name": "Denali - Moose Tracks",
+        "description": "Vanilla ice cream loaded with peanut butter cups and famous Moose Tracks fudge",
+        "price": 5.99,
+        "category": "Seasonal",
+        "image": "",
+        "featured": true,
+        "available": true
+    },
+    {
+        "id": 9,
+        "name": "High Roller",
+        "description": "Caramel ice cream with chocolate-covered potato chips and chocolate swirls",
+        "price": 5.99,
+        "category": "Specialty",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 10,
+        "name": "Banana PB&amp;J Odyssey",
+        "description": "Banana ice cream with peanut butter swirls and real strawberry jam ribbons",
+        "price": 5.99,
+        "category": "Specialty",
+        "image": "",
+        "featured": true,
+        "available": true
+    },
+    {
+        "id": 11,
+        "name": "Canadian Maple Walnut",
+        "description": "Rich maple ice cream made with authentic Canadian maple syrup and crunchy walnut pieces",
+        "price": 5.49,
+        "category": "Canadian",
+        "image": "",
+        "featured": true,
+        "available": true
+    },
+    {
+        "id": 12,
+        "name": "Salty Caramel",
+        "description": "Sweet caramel ice cream with a perfect touch of sea salt",
+        "price": 5.49,
+        "category": "Specialty",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 13,
+        "name": "Ah! Chocolat!",
+        "description": "Decadent dark chocolate ice cream with chocolate chunks and a chocolate ganache swirl",
+        "price": 5.99,
+        "category": "Chocolate",
+        "image": "",
+        "featured": true,
+        "available": true
+    },
+    {
+        "id": 14,
+        "name": "Toasted S'mores",
+        "description": "Marshmallow ice cream with graham cracker pieces and chocolate chunks",
+        "price": 5.99,
+        "category": "Specialty",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 15,
+        "name": "Orange Pineapple",
+        "description": "Refreshing orange ice cream swirled with sweet pineapple pieces",
+        "price": 4.99,
+        "category": "Fruit",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 16,
+        "name": "Black Cherry",
+        "description": "Smooth and creamy ice cream packed with chunks of real black cherries",
+        "price": 5.49,
+        "category": "Fruit",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 17,
+        "name": "Key Lime Pie",
+        "description": "Tangy key lime ice cream with graham cracker swirls",
+        "price": 5.99,
+        "category": "Dessert Inspired",
+        "image": "",
+        "featured": false,
+        "available": true
+    },
+    {
+        "id": 18,
+        "name": "Spiderman",
+        "description": "Vibrant blue vanilla ice cream with a raspberry swirl and chocolate chunks",
+        "price": 5.99,
+        "category": "Kid's Favorite",
+        "image": "",
+        "featured": true,
+        "available": true
+    },
+    {
+        "id": 19,
+        "name": "Acadian Vanilla",
+        "description": "Traditional vanilla ice cream with a touch of maple - a Canadian classic",
+        "price": 4.99,
+        "category": "Canadian",
+        "image": "",
+        "featured": false,
+        "available": true
+    }
+]
