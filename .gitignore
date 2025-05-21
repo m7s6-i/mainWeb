@@ -1,0 +1,37 @@
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# XAMPP
+.htaccess
+.htpasswd
+
+# Logs
+*.log
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Local development
+xampp/
+
+# Sensitive data
+config.php
+*.pem
+*.key
+
+# Cache
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.swp
+*~

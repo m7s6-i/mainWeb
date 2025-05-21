@@ -3,11 +3,11 @@
         "id": 1,
         "name": "Vanilla Bean",
         "description": "Classic vanilla ice cream with real vanilla bean specks",
-        "price": 619,
+        "price": 210,
         "category": "Classic",
-        "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auto=format&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;fit=crop&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;w=600&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;q=80",
+        "image": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;auto=format&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;fit=crop&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;w=600&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;q=80",
         "featured": true,
-        "available": false,
+        "available": true,
         "in_truck": true
     },
     {

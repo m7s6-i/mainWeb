@@ -9,6 +9,7 @@ define('MENU_FILE', DATA_PATH . '/menu.json');
 define('USERS_FILE', DATA_PATH . '/users.json');
 define('TRUCK_SCHEDULE_FILE', DATA_PATH . '/truck_schedule.json');
 
+
 // Helper functions
 function loadJson($file) {
     if (!file_exists($file)) {
